@@ -17,10 +17,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18  # Use Node.js version 18 (or the version you prefer)
-          cache: 'npm'
+          cache: 'npm'      # Cache npm dependencies for faster builds
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci         # Use `npm ci` for clean, reproducible installations
+        # Alternatively, you can use `npm install --prefer-offline`
 
       - name: Run Linter
         run: npm run lint
